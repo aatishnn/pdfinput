@@ -1,0 +1,11 @@
+prefix=/app/opt
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: poppler
+Description: PDF rendering library
+Version: 0.51.0
+
+Libs: -L${libdir} -lpoppler
+Cflags: -I${includedir}/poppler

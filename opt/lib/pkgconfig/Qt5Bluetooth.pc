@@ -1,0 +1,14 @@
+prefix=/app/opt
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 Bluetooth
+Description: Qt Bluetooth module
+Version: 5.7.1
+Libs: -L${libdir} -lQt5Bluetooth 
+Libs.private: -L/app/opt/lib -lQt5Core -lpthread -lQt5Concurrent -L/app/opt/lib -lQt5Core -lpthread  
+Cflags: -I${includedir}/QtBluetooth -I${includedir}
+Requires: Qt5Core
+
