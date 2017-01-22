@@ -12,25 +12,18 @@
         'src/NodePopplerAsync.cc',
         'src/NodePoppler.cc'
     ],
-    'cflags!': [ '-fno-exceptions' ],
-    'cflags_cc!': [ '-fno-exceptions' ],
     'cflags':[ '<!@(pkg-config cairo --cflags)' ],
-    'libraries': [
-        '<!@(pkg-config cairo --libs)',
-        '-lpoppler-qt5',
-        '-lQt5Core',
-        '-lQt5Gui',
-    ],
+    'libraries': [ '<!@(pkg-config cairo --libs)', ],
     'conditions': [
         ['OS=="mac"', {
-            'libraries': [ '-L<(PRODUCT_DIR)/../../opt/lib' ],
+            'libraries': [ '<!@(pkg-config poppler-qt5 --libs)' ],
             'xcode_settings':{
                 'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
                 'OTHER_CFLAGS': [
-                    '-std=c++11',
+                    '<!@(pkg-config poppler-qt5 --cflags)',
+                    '-mmacosx-version-min=10.9',
                     '-stdlib=libc++',
-                    '-fexceptions',
-                    '<!@(pkg-config poppler-qt5 --cflags)'
+                    '-std=c++11',
                 ]
             }
         }],
@@ -39,8 +32,11 @@
                 '-I<(PRODUCT_DIR)/../../opt/include',
                 '-I<(PRODUCT_DIR)/../../opt/include/poppler/qt5',
                 '-I<(PRODUCT_DIR)/../../opt/include/poppler',
+                '-lQt5Core',
+                '-lQt5Gui',
             ],
             'libraries': [
+                '-lpoppler-qt5',
                 '-L<(PRODUCT_DIR)/../../opt/lib'
             ]
         }]
