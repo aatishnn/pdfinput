@@ -1,0 +1,25 @@
+{
+  "name":           "pdfinput",
+  "version":        "1.0.0",
+  "description":    "pdf form filler",
+  "dependencies": {
+    "nan":          "2"
+  },
+  "repository": {
+    "type":         "git",
+    "url":          "git://github.com/reqshark/pdfinput"
+  },
+  "author": {
+    "name":         "Bent Cardan",
+    "email":        "bent@nothingsatisfies.com"
+  },
+  "license":        "martiniware",
+  "keywords": [
+    "pdf",
+    "form",
+    "filler",
+    "poppler",
+    "qt5",
+    "cairo"
+  ]
+}
