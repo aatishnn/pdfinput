@@ -23,7 +23,7 @@
     ],
     'conditions': [
         ['OS=="mac"', {
-            'libraries': [ '-lnanomsg' ],
+            'libraries': [ '-L<(PRODUCT_DIR)/../../opt/lib' ],
             'xcode_settings':{
                 'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
                 'OTHER_CFLAGS': [
@@ -39,8 +39,6 @@
                 '-I<(PRODUCT_DIR)/../../opt/include',
                 '-I<(PRODUCT_DIR)/../../opt/include/poppler/qt5',
                 '-I<(PRODUCT_DIR)/../../opt/include/poppler',
-                '-lQt5Core',
-                '-lQt5Gui',
             ],
             'libraries': [
                 '-L<(PRODUCT_DIR)/../../opt/lib'
