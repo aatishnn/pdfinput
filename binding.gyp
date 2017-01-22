@@ -10,9 +10,11 @@
     'sources': [
         'src/pdf.cc',
         'src/NodePopplerAsync.cc',
-        'src/NodePoppler.cc'
+        'src/NodePoppler.cc',
     ],
-    'cflags':[ '<!@(pkg-config cairo --cflags)' ],
+    'cflags!': [ '-fno-exceptions' ],
+    'cflags_cc!': [ '-fno-exceptions' ],
+    'cflags':[ '<!@(pkg-config cairo --cflags)'],
     'libraries': [ '<!@(pkg-config cairo --libs)', ],
     'conditions': [
         ['OS=="mac"', {
