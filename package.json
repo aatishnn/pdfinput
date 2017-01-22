@@ -1,6 +1,6 @@
 {
   "name":           "pdfinput",
-  "version":        "1.0.1",
+  "version":        "2.0.0",
   "description":    "pdf form filler",
   "dependencies": {
     "nan":          "2"
